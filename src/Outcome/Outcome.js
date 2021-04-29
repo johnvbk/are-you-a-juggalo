@@ -1,4 +1,3 @@
-import { whileStatement } from '@babel/types';
 import React from 'react';
 
 const outcome = (props) => {
@@ -24,11 +23,18 @@ const outcome = (props) => {
         style.height = "430px"
         outcome_text = "You've been pimped by a Detroit mac daddy!"
     }
-    if (props.total_juggalo_answers > 4)
+    if (props.total_juggalo_answers > 4) {
+        style.backgroundImage = 'url("/images/juggalo_clown.png")'
+        style.height = "250px"
         outcome_text = "Straight Juggalo fo life!"
-
+    }
     return (
-        <div style={style}> {outcome_text}</div>
+        <div>
+            <div style={style}> 
+                {outcome_text}
+            </div>
+            <button onClick={props.reset_click}>Start Over</button>
+        </div>
     );
 };
 

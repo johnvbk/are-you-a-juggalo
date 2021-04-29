@@ -17,6 +17,20 @@ class App extends Component {
     total_juggalo_answers: 0
   }
 
+  resetStateHandler = () => {
+    this.setState({
+      questions: [
+        {id: 1, question: "Do you drink Faygo", possible_answers: ['Yes', 'No'], answer: null, juggalo_answer: 'Yes', available: true},
+        {id: 2, question: "Is Eminem a little bitch", possible_answers: ['Yes', 'No'], answer: null, juggalo_answer: 'Yes', available: false},
+        {id: 3, question: "Did Chuck cut 'em up", possible_answers: ['Yes', 'No'], answer: null, juggalo_answer: 'Yes', available: false},
+        {id: 4, question: "Did $WB jump you in" , possible_answers: ['Yes', 'No'], answer: null, juggalo_answer: 'Yes', available: false},
+        {id: 5, question: "Do you know how magnets work" , possible_answers: ['Yes', 'No'], answer: null, juggalo_answer: 'No', available: false},
+      ],
+      answered_all_questions: false,
+      total_juggalo_answers: 0
+    })
+  }
+
   answerQuestionHandler = ( event ) => {
     const question_id = Number(event.target.getAttribute('question_id'))
     const question_answer = event.target.value
@@ -48,7 +62,7 @@ class App extends Component {
               )       
           )}
         {this.state.answered_all_questions
-          ?<Outcome total_juggalo_answers={this.state.total_juggalo_answers} />
+          ?<Outcome total_juggalo_answers={this.state.total_juggalo_answers} reset_click={this.resetStateHandler}/>
           :null
         }
       </div>
