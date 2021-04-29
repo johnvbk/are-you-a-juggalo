@@ -7,14 +7,14 @@ class App extends Component {
 
   state = {
     questions: [
-      {id: 1, question: "Do you drink Faygo", possible_answers: ['Yes', 'No'], answer: null, available: true},
-      {id: 2, question: "Is Eminem a little bitch", possible_answers: ['Yes', 'No'], answer: null, available: false},
-      {id: 3, question: "Did Chuck cut 'em up", possible_answers: ['Yes', 'No'], answer: null, available: false},
-      {id: 4, question: "Did $WB jump you in" , possible_answers: ['Yes', 'No'], answer: null, available: false},
-      {id: 5, question: "Do you know how magnets work" , possible_answers: ['Yes', 'No'], answer: null, available: false},
+      {id: 1, question: "Do you drink Faygo", possible_answers: ['Yes', 'No'], answer: null, juggalo_answer: 'Yes', available: true},
+      {id: 2, question: "Is Eminem a little bitch", possible_answers: ['Yes', 'No'], answer: null, juggalo_answer: 'Yes', available: false},
+      {id: 3, question: "Did Chuck cut 'em up", possible_answers: ['Yes', 'No'], answer: null, juggalo_answer: 'Yes', available: false},
+      {id: 4, question: "Did $WB jump you in" , possible_answers: ['Yes', 'No'], answer: null, juggalo_answer: 'Yes', available: false},
+      {id: 5, question: "Do you know how magnets work" , possible_answers: ['Yes', 'No'], answer: null, juggalo_answer: 'No', available: false},
     ],
     answered_all_questions: false,
-    total_yes: 0
+    total_juggalo_answers: 0
   }
 
   answerQuestionHandler = ( event ) => {
@@ -33,8 +33,8 @@ class App extends Component {
 
     this.setState({questions:questions})
 
-    if (question_answer === 'Yes')
-      this.setState({total_yes: this.state.total_yes + 1})
+    if (question_answer === questions[question_idx]['juggalo_answer'])
+      this.setState({total_juggalo_answers: this.state.total_juggalo_answers + 1})
   }
 
   render () {
@@ -48,7 +48,7 @@ class App extends Component {
               )       
           )}
         {this.state.answered_all_questions
-          ?<Outcome total_yes={this.state.total_yes} />
+          ?<Outcome total_juggalo_answers={this.state.total_juggalo_answers} />
           :null
         }
       </div>

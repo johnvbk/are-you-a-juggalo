@@ -11,9 +11,9 @@ const outcome = (props) => {
     };
 
     let outcome_text = "You a bitch fo real!"
-    if (props.total_yes > 2)
+    if (props.total_juggalo_answers > 2)
         outcome_text = "You've been pimped by a detroit mac daddy!"
-    if (props.total_yes > 4)
+    if (props.total_juggalo_answers > 4)
         outcome_text = "Straight Juggalo fo life!"
 
     return (
