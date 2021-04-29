@@ -1,4 +1,5 @@
 import React from 'react';
+import Radium from 'radium'
 
 const possible_answer = (props) => {
     const div_style = {
@@ -11,7 +12,11 @@ const possible_answer = (props) => {
     const button_style = {
         background: '#2079b0',
         borderRadius: '5px',
-        color: 'white'
+        color: 'white',
+        ':hover': {
+            background: 'orange',
+            color: 'black'
+        }
     }
 
     return (
@@ -21,4 +26,4 @@ const possible_answer = (props) => {
     );
 };
 
-export default possible_answer;
+export default Radium(possible_answer);

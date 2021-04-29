@@ -7,11 +7,11 @@ class App extends Component {
 
   state = {
     questions: [
-      {id: 1, question: "Do you drink Faygo", possible_answers: ['Yes', 'No'], answer: null, juggalo_answer: 'Yes', available: true},
-      {id: 2, question: "Is Eminem a little bitch", possible_answers: ['Yes', 'No'], answer: null, juggalo_answer: 'Yes', available: false},
-      {id: 3, question: "Did Chuck cut 'em up", possible_answers: ['Yes', 'No'], answer: null, juggalo_answer: 'Yes', available: false},
-      {id: 4, question: "Did $WB jump you in" , possible_answers: ['Yes', 'No'], answer: null, juggalo_answer: 'Yes', available: false},
-      {id: 5, question: "Do you know how magnets work" , possible_answers: ['Yes', 'No'], answer: null, juggalo_answer: 'No', available: false},
+      {id: 1, question: "Do you drink Faygo", possible_answers: ['Yes', 'Maybe', 'No'], answer: null, juggalo_answer: 'Yes', available: true, image: '/images/juggalette-faygo.png'},
+      {id: 2, question: "Is Eminem a little bitch", possible_answers: ['Fo Sho', 'No'], answer: null, juggalo_answer: 'Fo Sho', available: false, image: '/images/bitch_clown.png'},
+      {id: 3, question: "Did Chuck cut 'em up", possible_answers: ['Yes', 'No'], answer: null, juggalo_answer: 'Yes', available: false, image: '/images/bitch_clown.png'},
+      {id: 4, question: "Did $WB jump you in" , possible_answers: ['Yes', 'No'], answer: null, juggalo_answer: 'Yes', available: false, image: '/images/bitch_clown.png'},
+      {id: 5, question: "Do you know how magnets work" , possible_answers: ['Yes', 'No'], answer: null, juggalo_answer: 'No', available: false, image: '/images/bitch_clown.png'},
     ],
     answered_all_questions: false,
     total_juggalo_answers: 0
@@ -20,11 +20,11 @@ class App extends Component {
   resetStateHandler = () => {
     this.setState({
       questions: [
-        {id: 1, question: "Do you drink Faygo", possible_answers: ['Yes', 'No'], answer: null, juggalo_answer: 'Yes', available: true},
-        {id: 2, question: "Is Eminem a little bitch", possible_answers: ['Yes', 'No'], answer: null, juggalo_answer: 'Yes', available: false},
-        {id: 3, question: "Did Chuck cut 'em up", possible_answers: ['Yes', 'No'], answer: null, juggalo_answer: 'Yes', available: false},
-        {id: 4, question: "Did $WB jump you in" , possible_answers: ['Yes', 'No'], answer: null, juggalo_answer: 'Yes', available: false},
-        {id: 5, question: "Do you know how magnets work" , possible_answers: ['Yes', 'No'], answer: null, juggalo_answer: 'No', available: false},
+        {id: 1, question: "Do you drink Faygo", possible_answers: ['Yes', 'Maybe', 'No'], answer: null, juggalo_answer: 'Yes', available: true, image: '/images/juggalette-faygo.png'},
+        {id: 2, question: "Is Eminem a little bitch", possible_answers: ['Fo Sho', 'No'], answer: null, juggalo_answer: 'Fo Sho', available: false, image: '/images/bitch_clown.png'},
+        {id: 3, question: "Did Chuck cut 'em up", possible_answers: ['Yes', 'No'], answer: null, juggalo_answer: 'Yes', available: false, image: '/images/bitch_clown.png'},
+        {id: 4, question: "Did $WB jump you in" , possible_answers: ['Yes', 'No'], answer: null, juggalo_answer: 'Yes', available: false, image: '/images/bitch_clown.png'},
+        {id: 5, question: "Do you know how magnets work" , possible_answers: ['Yes', 'No'], answer: null, juggalo_answer: 'No', available: false, image: '/images/bitch_clown.png'},
       ],
       answered_all_questions: false,
       total_juggalo_answers: 0
@@ -57,12 +57,21 @@ class App extends Component {
         Are you a Juggalo?
         {this.state.questions.map((question) => (
               question.available
-              ?<Question key={question.id} question={question.question} question_id={question.id} possible_answers={question.possible_answers} answer_handler={this.answerQuestionHandler}/>
+              ?<Question 
+                key={question.id} 
+                question={question.question} 
+                question_id={question.id} 
+                question_image={question.image}
+                possible_answers={question.possible_answers} 
+                answer_handler={this.answerQuestionHandler}
+                />
               :null
               )       
           )}
         {this.state.answered_all_questions
-          ?<Outcome total_juggalo_answers={this.state.total_juggalo_answers} reset_click={this.resetStateHandler}/>
+          ?<Outcome 
+            total_juggalo_answers={this.state.total_juggalo_answers} 
+            reset_click={this.resetStateHandler}/>
           :null
         }
       </div>
