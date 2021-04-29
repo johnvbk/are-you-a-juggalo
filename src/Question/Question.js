@@ -5,10 +5,11 @@ const question = (props) => {
     const style = {
         display: 'block',
         padding: '16px',
-        margin: '16px',
+        margin: '16px auto',
         width: '400px',
         border: '1px solid black',
-        textAlign: 'center'
+        textAlign: 'center',
+        borderRadius: '5px'
     };
 
     

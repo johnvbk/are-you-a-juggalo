@@ -1,18 +1,22 @@
 import React from 'react';
 
 const possible_answer = (props) => {
-    const style = {
-        display: 'block',
+    const div_style = {
+        display: 'inline',
         padding: '16px',
         margin: '16px',
         width: '200px',
-        border: '1px solid black',
-        textAlign: 'center'
     };
 
+    const button_style = {
+        background: '#2079b0',
+        borderRadius: '5px',
+        color: 'white'
+    }
+
     return (
-        <div style={style} onClick={props.click} >
-            <button value={props.answer} question_id={props.question_id} >{props.answer}</button>
+        <div style={div_style} onClick={props.click} >
+            <button style={button_style} value={props.answer} question_id={props.question_id} >{props.answer}</button>
         </div>
     );
 };
