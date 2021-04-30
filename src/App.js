@@ -8,10 +8,10 @@ class App extends Component {
   state = {
     questions: [
       {id: 1, question: "Do you drink Faygo", possible_answers: ['Yes', 'Maybe', 'No'], answer: null, juggalo_answer: 'Yes', available: true, image: '/images/juggalette-faygo.png'},
-      {id: 2, question: "Is Eminem a little bitch", possible_answers: ['Fo Sho', 'No'], answer: null, juggalo_answer: 'Fo Sho', available: false, image: '/images/bitch_clown.png'},
-      {id: 3, question: "Did Chuck cut 'em up", possible_answers: ['Yes', 'No'], answer: null, juggalo_answer: 'Yes', available: false, image: '/images/bitch_clown.png'},
-      {id: 4, question: "Did $WB jump you in" , possible_answers: ['Yes', 'No'], answer: null, juggalo_answer: 'Yes', available: false, image: '/images/bitch_clown.png'},
-      {id: 5, question: "Do you know how magnets work" , possible_answers: ['Yes', 'No'], answer: null, juggalo_answer: 'No', available: false, image: '/images/bitch_clown.png'},
+      {id: 2, question: "Is Eminem a little bitch", possible_answers: ['Fo Sho', 'No'], answer: null, juggalo_answer: 'Fo Sho', available: false, image: '/images/eminem_bitch.png'},
+      {id: 3, question: "Did Chuck cut 'em up", possible_answers: ['Yes', 'No'], answer: null, juggalo_answer: 'Yes', available: false, image: '/images/chuck_chainsaw.png'},
+      {id: 4, question: "Were you jumped you in" , possible_answers: ['Yes', 'No'], answer: null, juggalo_answer: 'Yes', available: false, image: '/images/juggalo_gang.png'},
+      {id: 5, question: "Do you know how magnets work" , possible_answers: ['Yes', 'No'], answer: null, juggalo_answer: 'No', available: false, image: '/images/magnets.png'},
     ],
     answered_all_questions: false,
     total_juggalo_answers: 0
@@ -21,10 +21,10 @@ class App extends Component {
     this.setState({
       questions: [
         {id: 1, question: "Do you drink Faygo", possible_answers: ['Yes', 'Maybe', 'No'], answer: null, juggalo_answer: 'Yes', available: true, image: '/images/juggalette-faygo.png'},
-        {id: 2, question: "Is Eminem a little bitch", possible_answers: ['Fo Sho', 'No'], answer: null, juggalo_answer: 'Fo Sho', available: false, image: '/images/bitch_clown.png'},
-        {id: 3, question: "Did Chuck cut 'em up", possible_answers: ['Yes', 'No'], answer: null, juggalo_answer: 'Yes', available: false, image: '/images/bitch_clown.png'},
-        {id: 4, question: "Did $WB jump you in" , possible_answers: ['Yes', 'No'], answer: null, juggalo_answer: 'Yes', available: false, image: '/images/bitch_clown.png'},
-        {id: 5, question: "Do you know how magnets work" , possible_answers: ['Yes', 'No'], answer: null, juggalo_answer: 'No', available: false, image: '/images/bitch_clown.png'},
+        {id: 2, question: "Is Eminem a little bitch", possible_answers: ['Fo Sho', 'No'], answer: null, juggalo_answer: 'Fo Sho', available: false, image: '/images/eminem_bitch.png'},
+        {id: 3, question: "Did Chuck cut 'em up", possible_answers: ['Yes', 'No'], answer: null, juggalo_answer: 'Yes', available: false, image: '/images/chuck_chainsaw.png'},
+        {id: 4, question: "Were you jumped you in" , possible_answers: ['Yes', 'No'], answer: null, juggalo_answer: 'Yes', available: false, image: '/images/juggalo_gang.png'},
+        {id: 5, question: "Do you know how magnets work" , possible_answers: ['Yes', 'No'], answer: null, juggalo_answer: 'No', available: false, image: '/images/magnets.png'},
       ],
       answered_all_questions: false,
       total_juggalo_answers: 0
@@ -51,10 +51,18 @@ class App extends Component {
       this.setState({total_juggalo_answers: this.state.total_juggalo_answers + 1})
   }
 
+  style = {
+    "backgroundImage": 'url("/images/detroit.png")',
+    "backgroundSize": "cover",
+    "backgroundRepeat": "no-repeat",
+    "height": "1000px"
+  }
+
+
   render () {
     return (
-      <div className="App">
-        Are you a Juggalo?
+      <div className="App" style={this.style}>
+        <img src="images/are-you-a-juggalo.png" alt="Are you a Juggalo?" />
         {this.state.questions.map((question) => (
               question.available
               ?<Question 
