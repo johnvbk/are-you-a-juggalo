@@ -12,6 +12,7 @@ class App extends Component {
       {id: 3, question: "Did Chuck cut 'em up", possible_answers: ['Yes', 'No'], answer: null, juggalo_answer: 'Yes', available: false, image: '/images/chuck_chainsaw.png'},
       {id: 4, question: "Were you jumped you in" , possible_answers: ['Yes', 'No'], answer: null, juggalo_answer: 'Yes', available: false, image: '/images/juggalo_gang.png'},
       {id: 5, question: "Do you know how magnets work" , possible_answers: ['Yes', 'No'], answer: null, juggalo_answer: 'No', available: false, image: '/images/magnets.png'},
+      {id: 6, question: "How do scientist make you feel", possible_answers: ['Pissed', 'Informed'],  answer: null, juggalo_answer: 'Pissed', available: false, image: '/images/fuck_science.png'}
     ],
     answered_all_questions: false,
     total_juggalo_answers: 0
@@ -25,6 +26,7 @@ class App extends Component {
         {id: 3, question: "Did Chuck cut 'em up", possible_answers: ['Yes', 'No'], answer: null, juggalo_answer: 'Yes', available: false, image: '/images/chuck_chainsaw.png'},
         {id: 4, question: "Were you jumped you in" , possible_answers: ['Yes', 'No'], answer: null, juggalo_answer: 'Yes', available: false, image: '/images/juggalo_gang.png'},
         {id: 5, question: "Do you know how magnets work" , possible_answers: ['Yes', 'No'], answer: null, juggalo_answer: 'No', available: false, image: '/images/magnets.png'},
+        {id: 6, question: "How do scientist make you feel", possible_answers: ['Pissed', 'Informed'],  answer: null, juggalo_answer: 'Pissed', available: false, image: '/images/fuck_science.png'}
       ],
       answered_all_questions: false,
       total_juggalo_answers: 0
