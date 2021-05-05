@@ -4,31 +4,28 @@ import Question from './Question/Question';
 import Outcome from './Outcome/Outcome';
 
 class App extends Component {
-
-  state = {
-    questions: [
-      {id: 1, question: "Do you drink Faygo", possible_answers: ['Yes', 'Maybe', 'No'], answer: null, juggalo_answer: 'Yes', available: true, image: '/images/juggalette-faygo.png'},
-      {id: 2, question: "Is Eminem a little bitch", possible_answers: ['Fo Sho', 'No'], answer: null, juggalo_answer: 'Fo Sho', available: false, image: '/images/eminem_bitch.png'},
-      {id: 3, question: "Did Chuck cut 'em up", possible_answers: ['Yes', 'No'], answer: null, juggalo_answer: 'Yes', available: false, image: '/images/chuck_chainsaw.png'},
-      {id: 4, question: "Were you jumped you in" , possible_answers: ['Yes', 'No'], answer: null, juggalo_answer: 'Yes', available: false, image: '/images/juggalo_gang.png'},
-      {id: 5, question: "Do you know how magnets work" , possible_answers: ['Yes', 'No'], answer: null, juggalo_answer: 'No', available: false, image: '/images/magnets.png'},
-    ],
-    answered_all_questions: false,
-    total_juggalo_answers: 0
-  }
-
-  resetStateHandler = () => {
-    this.setState({
+ 
+  constructor(props) {
+    super(props);
+    this.state = {
       questions: [
         {id: 1, question: "Do you drink Faygo", possible_answers: ['Yes', 'Maybe', 'No'], answer: null, juggalo_answer: 'Yes', available: true, image: '/images/juggalette-faygo.png'},
         {id: 2, question: "Is Eminem a little bitch", possible_answers: ['Fo Sho', 'No'], answer: null, juggalo_answer: 'Fo Sho', available: false, image: '/images/eminem_bitch.png'},
         {id: 3, question: "Did Chuck cut 'em up", possible_answers: ['Yes', 'No'], answer: null, juggalo_answer: 'Yes', available: false, image: '/images/chuck_chainsaw.png'},
         {id: 4, question: "Were you jumped you in" , possible_answers: ['Yes', 'No'], answer: null, juggalo_answer: 'Yes', available: false, image: '/images/juggalo_gang.png'},
         {id: 5, question: "Do you know how magnets work" , possible_answers: ['Yes', 'No'], answer: null, juggalo_answer: 'No', available: false, image: '/images/magnets.png'},
+        {id: 6, question: "How do scientist make you feel", possible_answers: ['Pissed', 'Informed'],  answer: null, juggalo_answer: 'Pissed', available: false, image: '/images/fuck_science.png'}
       ],
       answered_all_questions: false,
       total_juggalo_answers: 0
-    })
+    }
+    this.baseState = this.state
+  }
+
+  resetStateHandler = () => {
+    console.log(this.baseState)
+    this.setState(this.baseState)
+    console.log(this.state)
   }
 
   answerQuestionHandler = ( event ) => {
@@ -57,7 +54,6 @@ class App extends Component {
     "backgroundRepeat": "no-repeat",
     "height": "1000px"
   }
-
 
   render () {
     return (
