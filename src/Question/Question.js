@@ -1,7 +1,7 @@
 import React from 'react';
 import PossibleAnswer from '../PossibleAnswer/PossibleAnswer'
 
-const question = (props) => {
+const Question = (props) => {
     const style = {
         display: 'block',
         padding: '16px',
@@ -46,4 +46,4 @@ const question = (props) => {
     );
 };
 
-export default question;
+export default Question;

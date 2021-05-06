@@ -23,7 +23,7 @@ const outcome = (props) => {
         style.height = "430px"
         outcome_text = "You've been pimped by a Detroit mac daddy!"
     }
-    if (props.total_juggalo_answers > 4) {
+    if (props.total_juggalo_answers > 5) {
         style.backgroundImage = 'url("/images/juggalo_clown.png")'
         style.height = "250px"
         outcome_text = "Straight Juggalo fo life!"
